@@ -1,0 +1,37 @@
+2013-10-26 19:02:37,918 [7] NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO Orchard_OutputCache_CacheSettingsPartRecord (DefaultCacheDuration, DefaultMaxAge, DebugMode, ApplyCulture, VaryQueryStringParameters, IgnoredUrls, Id) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+System.Data.SqlServerCe.SqlCeException (0x80004005): Impossible d'insérer une valeur dupliquée dans un index unique. [ Table name = Orchard_OutputCache_CacheSettingsPartRecord,Constraint name = PK__Orchard_OutputCache_CacheSettingsPartRecord__0000000000000375 ]
+   à System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   à NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2013-10-26 19:02:38,098 [7] NHibernate.Util.ADOExceptionReporter - Impossible d'insérer une valeur dupliquée dans un index unique. [ Table name = Orchard_OutputCache_CacheSettingsPartRecord,Constraint name = PK__Orchard_OutputCache_CacheSettingsPartRecord__0000000000000375 ]
+2013-10-26 19:02:38,099 [7] NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session
+NHibernate.Exceptions.GenericADOException: could not insert: [Orchard.OutputCache.Models.CacheSettingsPartRecord#1][SQL: INSERT INTO Orchard_OutputCache_CacheSettingsPartRecord (DefaultCacheDuration, DefaultMaxAge, DebugMode, ApplyCulture, VaryQueryStringParameters, IgnoredUrls, Id) VALUES (?, ?, ?, ?, ?, ?, ?)] ---> System.Data.SqlServerCe.SqlCeException: Impossible d'insérer une valeur dupliquée dans un index unique. [ Table name = Orchard_OutputCache_CacheSettingsPartRecord,Constraint name = PK__Orchard_OutputCache_CacheSettingsPartRecord__0000000000000375 ]
+   à System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   à NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   à NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   à NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- Fin de la trace de la pile d'exception interne ---
+   à NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   à NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   à NHibernate.Action.EntityInsertAction.Execute()
+   à NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   à NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   à NHibernate.Engine.ActionQueue.ExecuteActions()
+   à NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2013-10-26 19:02:38,125 [7] Orchard.Data.SessionLocator - Error while disposing the transaction.
+NHibernate.Exceptions.GenericADOException: could not insert: [Orchard.OutputCache.Models.CacheSettingsPartRecord#1][SQL: INSERT INTO Orchard_OutputCache_CacheSettingsPartRecord (DefaultCacheDuration, DefaultMaxAge, DebugMode, ApplyCulture, VaryQueryStringParameters, IgnoredUrls, Id) VALUES (?, ?, ?, ?, ?, ?, ?)] ---> System.Data.SqlServerCe.SqlCeException: Impossible d'insérer une valeur dupliquée dans un index unique. [ Table name = Orchard_OutputCache_CacheSettingsPartRecord,Constraint name = PK__Orchard_OutputCache_CacheSettingsPartRecord__0000000000000375 ]
+   à System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   à System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   à NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   à NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   à NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- Fin de la trace de la pile d'exception interne ---
+   à NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   à NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
