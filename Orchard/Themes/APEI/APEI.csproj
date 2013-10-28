@@ -83,7 +83,9 @@
     <Content Include="Scripts\foundation.tooltips.js" />
     <Content Include="Scripts\foundation.topbar.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\launch_foundation.js" />
     <Content Include="Scripts\zepto.js" />
+    <Content Include="Styles\custom.css" />
     <Content Include="Styles\foundation.css" />
     <Content Include="Styles\foundation.min.css" />
     <Content Include="Styles\normalize.css" />
@@ -111,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Zones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widget-FoundationMenuWidget.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

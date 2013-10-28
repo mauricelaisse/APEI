@@ -1,0 +1,12 @@
+﻿/*-------TopBar------*/
+
+.top-bar {
+    margin-bottom: 10px;
+}
+
+.breadcrumbs {
+    background-color: #fff;
+    border-radius: 0px;
+    border-left: 0px;
+    border-right:  0px;
+}

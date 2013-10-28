@@ -1,0 +1,89 @@
+﻿@using Orchard.Core.Navigation.Models;
+
+@{
+    //Assuming that 3rd part of FoundationMenuWidget is the MenuWidgetPart, with menu infos.
+    MenuWidgetPart menuPart = ( MenuWidgetPart )Model.ContentItem.Parts[3];
+    IList<dynamic> items = ( IList<dynamic> )Enumerable.Cast<dynamic>( Model.Content.Items[0].Menu.Items );
+}
+
+@functions 
+{
+    public static string Active( dynamic item, bool withClassAttribute )
+    {
+            if( !item.Selected )
+                return String.Empty;
+            else
+                return withClassAttribute ? "class=active" : "active";
+    }
+
+    private static string Current( int length, int idx )
+    {
+        return idx == length ? "class=\"current\"" : String.Empty;
+    }
+} 
+
+@helper DisplayAsMenu( IList<dynamic> items )
+{
+    foreach( var item in items )
+    {
+        IList<dynamic> children = ( IList<dynamic> )Enumerable.Cast<dynamic>( item.Items );
+        if( children.Count != 0 )
+        {
+            
+            @Html.Raw( String.Format(
+                "<li class=\"has-dropdown {0}\"><a href={1}>{2}</a><ul class=\"dropdown\">",
+                Active( item, false ),
+                item.Href,
+                item.Text.Text
+                ));
+            @DisplayAsMenu( children );
+            @Html.Raw( "</ul></li><li class=\"divider\"></li>" );
+        }
+        else
+        {            
+            @Html.Raw( String.Format(
+                "<li {0}><a href={1}>{2}</a></li><li class=\"divider\"></li>",
+                Active( item, true ),
+                item.Href,
+                item.Text.Text
+                ));
+        }
+    } 
+}
+
+@helper DisplayAsBreadcrumb( IList<dynamic> items )
+{
+    if( items.Count == 0 ) { return; }
+    
+    int i = 0;
+    foreach( var item in items )
+    {
+        @Html.Raw( String.Format(
+            "<a {0} href=\"{1}\">{2}</a>",
+            Current(items.Count - 1, i),
+            item.Href,
+            item.Text.Text  
+        ));
+        i++;    
+    }   
+}
+
+@if( !menuPart.Breadcrumb )
+{
+    <nav class="top-bar">
+        <ul class="title-area">
+        <!-- Title Area -->
+        </ul>
+        <section class="top-bar-section">
+        <ul class="left">
+            @DisplayAsMenu( items )     
+        </ul>
+        </section>
+    </nav>
+}
+else
+{
+    <nav class="breadcrumbs">
+        @DisplayAsBreadcrumb( items )
+    </nav>
+}
