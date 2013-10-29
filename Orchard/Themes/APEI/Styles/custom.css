@@ -1,4 +1,10 @@
-﻿/*-------TopBar------*/
+﻿/*-------General-------*/
+
+.row {
+    max-width: 70em;
+}
+
+/*-------TopBar------*/
 
 .top-bar {
     margin-bottom: 10px;

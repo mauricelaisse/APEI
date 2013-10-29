@@ -1,0 +1,26 @@
+﻿@{
+    var contents = ( IList<dynamic> )Enumerable.Cast<dynamic>( Model.Content.Items[0].ContentField.MediaParts );
+}
+
+@helper DisplayOrbit( IList<dynamic> items )
+{
+    if( items.Count == 0 ) { return; }
+
+    @Html.Raw("<ul data-orbit data-options=\"timer_speed:5000;\">");
+
+    foreach(var item in items)
+    {
+        @Html.Raw(String.Format(
+            "<li><img src=\"{0}\"/><div class=\"orbit-caption\">{1}</div></li>",
+            item.MediaUrl,
+            item.Caption
+            ));
+    }
+
+    @Html.Raw("</ul>");
+}
+
+<div class="slideshow-wrapper">
+    <div class="preloader"></div>
+    @DisplayOrbit( contents )
+</div>
