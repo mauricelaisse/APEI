@@ -112,6 +112,8 @@
     <Content Include="Views\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\fields\" />
+    <Folder Include="Views\parts\" />
     <Folder Include="Zones\" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +121,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Widget-FoundationOrbitWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content-Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content-58.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts.Common.Metadata-Actualite.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts.Common.Metadata.Summary-Actualite.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

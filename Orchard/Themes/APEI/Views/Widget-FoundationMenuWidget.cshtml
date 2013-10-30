@@ -36,12 +36,12 @@
                 item.Text.Text
                 ));
             @DisplayAsMenu( children );
-            @Html.Raw( "</ul></li><li class=\"divider\"></li>" );
+            @Html.Raw( "</ul></li>" );
         }
         else
         {            
             @Html.Raw( String.Format(
-                "<li {0}><a href={1}>{2}</a></li><li class=\"divider\"></li>",
+                "<li {0}><a href={1}>{2}</a></li>",
                 Active( item, true ),
                 item.Href,
                 item.Text.Text
