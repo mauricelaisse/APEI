@@ -28,8 +28,7 @@
     {
         IList<dynamic> children = ( IList<dynamic> )Enumerable.Cast<dynamic>( item.Items );
         if( children.Count != 0 )
-        {
-            
+        {            
             @Html.Raw( String.Format(
                 "<li class=\"has-dropdown {0}\"><a href={1}>{2}</a><ul class=\"dropdown\">",
                 Active( item, false ),
@@ -73,7 +72,9 @@
     <nav class="top-bar">
         <ul class="title-area">
         <!-- Title Area -->
-        </ul>
+        <li class="name"></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>      
         <section class="top-bar-section">
         <ul class="left">
             @DisplayAsMenu( items )     

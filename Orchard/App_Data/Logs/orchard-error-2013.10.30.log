@@ -1,0 +1,20 @@
+2013-10-30 10:41:14,782 [12] Orchard.MediaProcessing.Shapes.MediaShapes - An error occured while rendering shape Transform_Resize_w_200_h_200_m_crop_a_middlecenter_c_ for image /Media/Default/azdfazrazra/232522_owen1.jpg
+System.ArgumentException: File azdfazrazra\232522_owen1.jpg does not exist
+   à Orchard.FileSystems.Media.FileSystemStorageProvider.GetFile(String path) dans c:\Orchard\src\Orchard\FileSystems\Media\FileSystemStorageProvider.cs:ligne 113
+   à Orchard.MediaProcessing.Services.ImageProfileManager.TryGetImageLastUpdated(String path, DateTime& lastUpdated)
+   à Orchard.MediaProcessing.Services.ImageProfileManager.GetImageProfileUrl(String path, String profileName, FilterRecord customFilter, ContentItem contentItem)
+   à Orchard.MediaProcessing.Shapes.MediaShapes.MediaUrl(Object Shape, Object Display, TextWriter Output, String Profile, String Path, ContentItem ContentItem, FilterRecord CustomFilter)
+2013-10-30 10:41:16,696 [6] Orchard.MediaProcessing.Shapes.MediaShapes - An error occured while rendering shape Transform_Resize_w_200_h_200_m_crop_a_middlecenter_c_ for image /Media/Default/azdfazrazra/232522_owen1.jpg
+System.ArgumentException: File azdfazrazra\232522_owen1.jpg does not exist
+   à Orchard.FileSystems.Media.FileSystemStorageProvider.GetFile(String path) dans c:\Orchard\src\Orchard\FileSystems\Media\FileSystemStorageProvider.cs:ligne 113
+   à Orchard.MediaProcessing.Services.ImageProfileManager.TryGetImageLastUpdated(String path, DateTime& lastUpdated)
+   à Orchard.MediaProcessing.Services.ImageProfileManager.GetImageProfileUrl(String path, String profileName, FilterRecord customFilter, ContentItem contentItem)
+   à Orchard.MediaProcessing.Shapes.MediaShapes.MediaUrl(Object Shape, Object Display, TextWriter Output, String Profile, String Path, ContentItem ContentItem, FilterRecord CustomFilter)
+2013-10-30 10:41:19,159 [12] Orchard.ContentManagement.DefaultContentManager - ArgumentException thrown from IContentHandler by Orchard.MediaLibrary.Handlers.MediaPartHandler
+System.ArgumentException: File azdfazrazra\232522_owen1.jpg does not exist
+   à Orchard.FileSystems.Media.FileSystemStorageProvider.DeleteFile(String path) dans c:\Orchard\src\Orchard\FileSystems\Media\FileSystemStorageProvider.cs:ligne 246
+   à Orchard.MediaLibrary.Handlers.MediaPartHandler.RemoveMedia(MediaPart part)
+   à Orchard.MediaLibrary.Handlers.MediaPartHandler.<.ctor>b__0(RemoveContentContext context, MediaPart part)
+   à Orchard.ContentManagement.Handlers.ContentHandler.InlineStorageFilter`1.Removing(RemoveContentContext context, TPart instance) dans c:\Orchard\src\Orchard\ContentManagement\Handlers\ContentHandler.cs:ligne 165
+   à Orchard.ContentManagement.Handlers.StorageFilterBase`1.Orchard.ContentManagement.Handlers.IContentStorageFilter.Removing(RemoveContentContext context) dans c:\Orchard\src\Orchard\ContentManagement\Handlers\StorageFilterBase.cs:ligne 95
+   à Orchard.ContentManagement.Handlers.ContentHandler.Orchard.ContentManagement.Handlers.IContentHandler.Removing(RemoveContentContext contex

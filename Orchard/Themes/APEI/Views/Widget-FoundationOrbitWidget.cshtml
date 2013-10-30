@@ -6,7 +6,16 @@
 {
     if( items.Count == 0 ) { return; }
 
-    @Html.Raw("<ul data-orbit data-options=\"timer_speed:5000;\">");
+    IList<string> orbitOptions = new List<string>();
+
+    orbitOptions.Add( "timer_speed: 5000" );
+    orbitOptions.Add( "slide_number: false" );
+    orbitOptions.Add( "animation: fade" );
+    orbitOptions.Add( "resume_on_mouseout: true" );
+    
+    @Html.Raw( String.Format( "<ul data-orbit data-options=\"{0}\">",
+        String.Join( @";", orbitOptions )
+        ));
 
     foreach(var item in items)
     {

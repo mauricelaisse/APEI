@@ -4,6 +4,11 @@
     max-width: 70em;
 }
 
+ul {
+    list-style-type: none;
+}
+
+
 /*-------TopBar------*/
 
 .top-bar {
@@ -16,3 +21,16 @@
     border-left: 0px;
     border-right:  0px;
 }
+
+/*-------Orbit-------*/
+
+.orbit-container .orbit-slides-container > * .orbit-caption {
+    right: 100px;
+    width: 400px;
+    bottom: 40px;  
+}
+
+.orbit-timer {
+    display: none;
+}
+

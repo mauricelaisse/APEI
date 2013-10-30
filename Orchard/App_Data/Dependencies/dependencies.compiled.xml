@@ -4,7 +4,7 @@
     <ExtensionId>APEI</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Themes/APEI/APEI.csproj</VirtualPath>
-    <Hash>da7eddf5be21e7d0</Hash>
+    <Hash>da7edeb10da47fcd</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Lucene</ExtensionId>
